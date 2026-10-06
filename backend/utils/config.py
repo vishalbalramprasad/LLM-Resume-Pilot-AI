@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     # Google Sign-In
     google_client_id: str = os.getenv(
         "GOOGLE_CLIENT_ID",
-        "641426987741-rv89d5lardcelvv0mgikfdui05219prk.apps.googleusercontent.com",
+        "58490329940-e7j85ua1lhgd9o8f41s70r54d9mjafh4.apps.googleusercontent.com",
     )
     
     # Database
