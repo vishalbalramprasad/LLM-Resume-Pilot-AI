@@ -1,4 +1,7 @@
-const API_URL = "http://localhost:8000/api";
+const API_ROOT = window.location.port === "8001"
+    ? `${window.location.protocol}//${window.location.hostname}:8000`
+    : window.location.origin;
+const API_URL = `${API_ROOT}/api`;
 const USER_SESSION_KEY = "resumePilot.googleUser";
 const googleStatus = document.getElementById("googleStatus");
 const googleButton = document.getElementById("googleSignInButton");

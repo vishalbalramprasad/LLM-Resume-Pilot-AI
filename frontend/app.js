@@ -1,6 +1,8 @@
 // Frontend JavaScript - Resume Parser & Job Matcher
 
-const API_ROOT = "http://localhost:8000";
+const API_ROOT = window.location.port === "8001"
+    ? `${window.location.protocol}//${window.location.hostname}:8000`
+    : window.location.origin;
 const API_URL = `${API_ROOT}/api`;
 const SESSION_RESUME_KEY = "resumePilot.resumeId";
 const USER_SESSION_KEY = "resumePilot.googleUser";

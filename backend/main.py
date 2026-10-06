@@ -6,12 +6,14 @@ Main entry point for the agentic AI system
 from fastapi import FastAPI, UploadFile, File, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from google.auth.exceptions import GoogleAuthError
 from google.auth.transport.requests import Request as GoogleAuthRequest
 from google.oauth2 import id_token
 import os
 import logging
 from datetime import datetime
+from pathlib import Path
 import uuid
 from typing import List, Optional
 
@@ -497,6 +499,10 @@ async def shutdown_event():
     """Cleanup on shutdown"""
     logger.info("Shutting down Resume Parser & Job Matcher API")
     vector_store.close()
+
+
+frontend_directory = Path(__file__).resolve().parents[1] / "frontend"
+app.mount("/", StaticFiles(directory=str(frontend_directory), html=True), name="frontend")
 
 # ==================== Main ====================
 

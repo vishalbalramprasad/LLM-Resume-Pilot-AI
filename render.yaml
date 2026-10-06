@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: llm-resume-pilot-ai
+    runtime: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.2
+      - key: CLAUDE_API_KEY
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: VECTOR_DB_PATH
+        value: /tmp/chroma_db
+      - key: LOG_LEVEL
+        value: INFO
