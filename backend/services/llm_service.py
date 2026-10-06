@@ -10,12 +10,12 @@ from typing import Optional, Dict, Any
 logger = logging.getLogger(__name__)
 
 class LLMService:
-    \"\"\"
+    """
     Service for interacting with Anthropic Claude API
     
     In production, this would use actual Claude API
     For now, returns mock responses for demonstration
-    \"\"\"
+    """
     
     def __init__(self, api_key: str, model: str = "claude-sonnet-4-6"):
         self.api_key = api_key
@@ -27,11 +27,11 @@ class LLMService:
     
     def call_claude(self, prompt: str, temperature: float = 0.7, 
                    max_tokens: int = 1500) -> str:
-        \"\"\"
+        """
         Call Claude API with given prompt
         
         Returns structured response
-        \"\"\"
+        """
         try:
             self.call_count += 1
             self.logger.info(f"Claude API call #{self.call_count}")
@@ -52,10 +52,10 @@ class LLMService:
             raise
     
     def _get_mock_response(self, prompt: str) -> str:
-        \"\"\"
+        """
         Get mock response for demonstration
         In production, replace with actual API call
-        \"\"\"
+        """
         
         # Detect what kind of request this is
         if "extract" in prompt.lower() and "resume" in prompt.lower():
@@ -70,7 +70,7 @@ class LLMService:
             return self._mock_generic_response()
     
     def _mock_resume_extraction(self) -> str:
-        \"\"\"Mock resume extraction response\"\"\"
+        """Mock resume extraction response"""
         return json.dumps({
             "personal_info": {
                 "name": "John Smith",
@@ -130,7 +130,7 @@ class LLMService:
         })
     
     def _mock_job_matching(self) -> str:
-        \"\"\"Mock job matching response\"\"\"
+        """Mock job matching response"""
         return json.dumps({
             "match_score": 92,
             "reasoning": "Strong Python and AWS expertise matches job requirements perfectly. Backend experience aligns well.",
@@ -141,7 +141,7 @@ class LLMService:
         })
     
     def _mock_career_advice(self) -> str:
-        \"\"\"Mock career advice response\"\"\"
+        """Mock career advice response"""
         return json.dumps({
             "career_summary": "Senior software engineer with strong technical foundation and leadership experience",
             "recommendations": [
@@ -178,7 +178,7 @@ class LLMService:
         })
     
     def _mock_interview_prep(self) -> str:
-        \"\"\"Mock interview preparation response\"\"\"
+        """Mock interview preparation response"""
         return json.dumps({
             "technical": [
                 {
@@ -212,7 +212,7 @@ class LLMService:
         })
     
     def _mock_generic_response(self) -> str:
-        \"\"\"Generic mock response\"\"\"
+        """Generic mock response"""
         return json.dumps({
             "status": "success",
             "data": "Response generated successfully"

@@ -9,7 +9,7 @@ from datetime import datetime
 
 def setup_logger(name: str, log_file: str = "app.log", 
                 level: str = "INFO") -> logging.Logger:
-    \"\"\"
+    """
     Setup logger with both file and console handlers
     
     Args:
@@ -19,7 +19,7 @@ def setup_logger(name: str, log_file: str = "app.log",
     
     Returns:
         Configured logger instance
-    \"\"\"
+    """
     
     logger = logging.getLogger(name)
     logger.setLevel(getattr(logging, level.upper()))

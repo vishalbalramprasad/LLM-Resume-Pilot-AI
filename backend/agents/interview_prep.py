@@ -10,7 +10,7 @@ import json
 logger = logging.getLogger(__name__)
 
 class InterviewPrepAgent:
-    \"\"\"
+    """
     Agentic component for interview preparation
     
     Capabilities:
@@ -19,7 +19,7 @@ class InterviewPrepAgent:
     - Create interview strategy
     - Suggest company research points
     - Identify questions to ask interviewer
-    \"\"\"
+    """
     
     def __init__(self, llm_service, vector_store):
         self.llm_service = llm_service
@@ -27,11 +27,11 @@ class InterviewPrepAgent:
         self.logger = logging.getLogger(__name__)
     
     def generate_questions(self, job_id: str, resume_data: Dict[str, Any]) -> Dict[str, List[Any]]:
-        \"\"\"
+        """
         Generate personalized interview questions
-        \"\"\"
+        """
         try:
-            prompt = f\"\"\"
+            prompt = f"""
             Generate interview questions for this candidate and role.
             Return ONLY valid JSON:
             
@@ -69,7 +69,7 @@ class InterviewPrepAgent:
             
             JOB REQUIREMENTS (job_id: {job_id}):
             - Similar to the jobs in our database
-            \"\"\"
+            """
             
             response = self.llm_service.call_claude(prompt)
             
@@ -85,9 +85,9 @@ class InterviewPrepAgent:
             return self._get_default_questions(resume_data)
     
     def get_interview_tips(self, job_id: str, resume_data: Dict[str, Any]) -> Dict[str, Any]:
-        \"\"\"
+        """
         Get comprehensive interview tips and strategy
-        \"\"\"
+        """
         try:
             experience = resume_data.get('years_of_experience', 0)
             
@@ -115,7 +115,7 @@ class InterviewPrepAgent:
             return self._get_default_tips()
     
     def _get_interview_strategy(self, years_exp: int) -> Dict[str, str]:
-        \"\"\"Get interview strategy based on experience level\"\"\"
+        """Get interview strategy based on experience level"""
         if years_exp < 2:
             return {
                 'approach': 'Focus on learning and enthusiasm',
@@ -136,35 +136,35 @@ class InterviewPrepAgent:
             }
     
     def _get_key_points(self, resume_data: Dict[str, Any]) -> List[str]:
-        \"\"\"Get key points to emphasize during interview\"\"\"
+        """Get key points to emphasize during interview"""
         points = []
         
         # Unique skills
         skills = resume_data.get('skills', {}).get('technical', [])
         if skills:
-            points.append(f\"Your expertise in {', '.join(skills[:3])}\")
+            points.append(f"Your expertise in {', '.join(skills[:3])}")
         
         # Experience
         years = resume_data.get('years_of_experience', 0)
         if years > 0:
-            points.append(f\"{years} years of professional experience\")
+            points.append(f"{years} years of professional experience")
         
         # Achievements
         work_exp = resume_data.get('work_experience', [])
         if work_exp and work_exp[0].get('key_achievements'):
             achievement = work_exp[0]['key_achievements'][0]
-            points.append(f\"Major achievement: {achievement}\")
+            points.append(f"Major achievement: {achievement}")
         
         # Education
         education = resume_data.get('education', [])
         if education:
             degree = education[0].get('degree', 'education')
-            points.append(f\"Strong foundation in {degree}\")
+            points.append(f"Strong foundation in {degree}")
         
         return points
     
     def _get_candidate_questions(self, job_id: str) -> List[str]:
-        \"\"\"Questions candidate should ask interviewer\"\"\"
+        """Questions candidate should ask interviewer"""
         return [
             'What does success look like in this role after 6 months?',
             'What are the biggest challenges the team is facing right now?',
@@ -176,7 +176,7 @@ class InterviewPrepAgent:
         ]
     
     def _get_default_questions(self, resume_data: Dict[str, Any]) -> Dict[str, List[Any]]:
-        \"\"\"Default interview questions\"\"\"
+        """Default interview questions"""
         return {
             'technical': [
                 {
@@ -221,7 +221,7 @@ class InterviewPrepAgent:
         }
     
     def _get_default_tips(self) -> Dict[str, Any]:
-        \"\"\"Default interview tips\"\"\"
+        """Default interview tips"""
         return {
             'tips': [
                 'Prepare thoroughly',
