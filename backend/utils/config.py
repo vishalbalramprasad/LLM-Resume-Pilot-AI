@@ -19,7 +19,10 @@ class Settings(BaseSettings):
     claude_model: str = "claude-sonnet-4-6"
 
     # Google Sign-In
-    google_client_id: str = os.getenv("GOOGLE_CLIENT_ID", "")
+    google_client_id: str = os.getenv(
+        "GOOGLE_CLIENT_ID",
+        "641426987741-rv89d5lardcelvv0mgikfdui05219prk.apps.googleusercontent.com",
+    )
     
     # Database
     database_url: str = os.getenv("DATABASE_URL", "sqlite:///app.db")

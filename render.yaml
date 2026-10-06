@@ -12,7 +12,7 @@ services:
       - key: CLAUDE_API_KEY
         sync: false
       - key: GOOGLE_CLIENT_ID
-        sync: false
+        value: 641426987741-rv89d5lardcelvv0mgikfdui05219prk.apps.googleusercontent.com
       - key: VECTOR_DB_PATH
         value: /tmp/chroma_db
       - key: LOG_LEVEL
