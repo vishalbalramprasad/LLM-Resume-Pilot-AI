@@ -22,41 +22,65 @@
 
             <div class="brand-message">
                 <p class="login-kicker"><span class="kicker-line"></span>YOUR AI CAREER COPILOT</p>
-                <h1 id="brandHeadline">Your Resume.<br>Your Skills.<br><span>Your Next Opportunity.</span></h1>
-                <p class="brand-description">Let AI find the right career path for you.</p>
+                <h1 id="brandHeadline">Build a resume<br>that <span>gets you hired.</span></h1>
+                <p class="brand-description">ResumePilot AI helps you present your strengths, discover relevant roles, and move forward with confidence.</p>
+                <ul class="feature-list">
+                    <li><span class="feature-icon">✦</span><span><strong>AI-powered matching</strong><small>Find roles shaped around your experience.</small></span></li>
+                    <li><span class="feature-icon">◎</span><span><strong>Career direction</strong><small>Turn skill gaps into practical next steps.</small></span></li>
+                    <li><span class="feature-icon">↗</span><span><strong>Interview preparation</strong><small>Practice with role-specific questions.</small></span></li>
+                </ul>
             </div>
 
-            <div class="signal-art" aria-hidden="true">
-                <div class="signal-grid"></div>
-                <div class="signal-ring ring-outer"></div>
-                <div class="signal-ring ring-middle"></div>
-                <div class="signal-ring ring-inner"></div>
-                <div class="signal-axis axis-horizontal"></div>
-                <div class="signal-axis axis-vertical"></div>
-                <span class="signal-core"></span>
-                <span class="signal-point point-one"></span>
-                <span class="signal-point point-two"></span>
-                <span class="signal-point point-three"></span>
-                <span class="signal-label label-top">PROFILE <b>01</b></span>
-                <span class="signal-label label-right">OPPORTUNITY <b>02</b></span>
-                <span class="signal-label label-bottom">MOMENTUM <b>03</b></span>
+            <div class="resume-scene" aria-label="Illustration of a resume profile and AI career analysis">
+                <div class="resume-sheet">
+                    <div class="resume-person"><span class="person-avatar">JD</span><span><strong>Jordan Doe</strong><small>Software Engineer</small></span><span class="resume-pill">PROFILE</span></div>
+                    <div class="resume-rule"></div>
+                    <span class="resume-label">PROFESSIONAL SUMMARY</span>
+                    <div class="resume-line line-long"></div><div class="resume-line line-wide"></div><div class="resume-line line-medium"></div>
+                    <span class="resume-label skills-label">SKILLS</span>
+                    <div class="resume-tags"><i>Python</i><i>APIs</i><i>Cloud</i></div>
+                    <span class="resume-label experience-label">EXPERIENCE</span>
+                    <div class="resume-line line-wide"></div><div class="resume-line line-medium"></div>
+                    <div class="resume-experience"><b></b><span></span><span></span></div>
+                </div>
+                <div class="analysis-card">
+                    <div class="analysis-heading"><span class="analysis-spark">✦</span><span><strong>AI profile scan</strong><small>Ready to analyze</small></span></div>
+                    <div class="score-gauge"><span>AI</span></div>
+                    <strong class="analysis-title">Your next step</strong>
+                    <p>Upload a resume to reveal your strengths and role matches.</p>
+                    <div class="analysis-check"><b>✓</b> Skills recognized</div>
+                    <div class="analysis-check"><b>✓</b> Career paths explored</div>
+                </div>
+                <span class="scene-spark spark-a">✦</span><span class="scene-spark spark-b">✧</span>
             </div>
 
             <div class="brand-footer"><span>YOUR AI COPILOT FOR SMARTER CAREERS</span><span>RPAI / 01</span></div>
         </section>
 
         <section class="form-panel" aria-labelledby="loginTitle">
-            <div class="form-topline"><span>WELCOME BACK</span><span class="secure-label"><i></i>GOOGLE SIGN-IN</span></div>
+            <div class="form-topline"><span>WELCOME BACK</span><span class="secure-label"><i></i>SECURE ACCESS</span></div>
             <div class="form-content">
-                <p class="form-index">YOUR CAREER WORKSPACE <span>·</span> 01</p>
-                <h2 id="loginTitle">Welcome to<br>Resume Pilot AI<span>.</span></h2>
-                <p class="form-intro">Your intelligent career copilot.</p>
+                <div class="form-brand"><span class="login-brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M9 6.5h9l5 5v13H9z"/><path d="M18 6.5v5h5M12.5 16h7M12.5 19.5h5"/><path class="logo-spark" d="m24.5 5 .9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9z"/></svg></span><strong>ResumePilot <span>AI</span></strong></div>
+                <h2 id="loginTitle">Welcome back!</h2>
+                <p class="form-intro" id="formIntro">Log in to continue</p>
+                <div class="auth-tabs" role="tablist" aria-label="Account access">
+                    <button class="auth-tab active" id="loginTab" type="button" role="tab" aria-selected="true" aria-controls="accountForm" data-auth-mode="login">Login</button>
+                    <button class="auth-tab" id="createAccountTab" type="button" role="tab" aria-selected="false" aria-controls="accountForm" data-auth-mode="register">Create account</button>
+                </div>
                 <div class="google-button-wrap"><div id="googleSignInButton"></div></div>
+                <button class="provider-button linkedin-button" id="linkedinButton" type="button"><span class="linkedin-mark">in</span>Continue with LinkedIn</button>
                 <p class="google-status" id="googleStatus" role="status" aria-live="polite">Connecting to Google sign-in…</p>
-
                 <div class="form-divider"><span></span><b>OR</b><span></span></div>
+                <form id="accountForm" novalidate>
+                    <label class="login-field register-only" for="fullName" hidden><span>Full name</span><input id="fullName" name="name" type="text" autocomplete="name" placeholder="Your name"></label>
+                    <label class="login-field" for="email"><span>Email address</span><span class="input-shell"><span class="field-icon" aria-hidden="true">✉</span><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></span></label>
+                    <label class="login-field" for="password"><span>Password</span><span class="input-shell"><span class="field-icon" aria-hidden="true">⌑</span><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" minlength="8" required><button class="reveal-button" id="togglePassword" type="button" aria-label="Show password" aria-pressed="false">◉</button></span></label>
+                    <div class="form-options"><label class="remember-option"><input type="checkbox" id="rememberMe"><span class="custom-check" aria-hidden="true"></span><span>Remember me</span></label><button class="forgot-button" id="forgotPasswordButton" type="button">Forgot password?</button></div>
+                    <button class="sign-in-button" type="submit"><span id="submitLabel">Login</span><span aria-hidden="true">↗</span></button>
+                </form>
+                <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+                <p class="auth-note" id="authNote">Google sign-in is verified by the ResumePilot AI server. Email/password accounts are not connected yet.</p>
                 <a class="workspace-link" href="index.html"><span>Explore the workspace demo</span><span aria-hidden="true">→</span></a>
-                <p class="auth-note">Google verifies your identity. Profile details are kept only for this browser session.</p>
             </div>
             <footer class="form-footer"><span>RESUME PILOT AI © 2026</span><span>MAKE THE NEXT MOVE COUNT.</span></footer>
         </section>
