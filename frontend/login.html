@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f6fb">
+    <title>Sign in | Resume Pilot AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <script id="googleIdentityScript" src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="login.js" defer></script>
+</head>
+<body class="login-page">
+    <main class="login-shell">
+        <section class="brand-panel" aria-labelledby="brandHeadline">
+            <a class="login-brand" href="index.html" aria-label="Resume Pilot AI workspace">
+                <span class="login-brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M9 6.5h9l5 5v13H9z"/><path d="M18 6.5v5h5M12.5 16h7M12.5 19.5h5"/><path class="logo-spark" d="m24.5 5 .9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9z"/></svg></span>
+                <span>Resume Pilot <span class="brand-ai">AI</span></span>
+            </a>
+
+            <div class="brand-message">
+                <p class="login-kicker"><span class="kicker-line"></span>YOUR AI CAREER COPILOT</p>
+                <h1 id="brandHeadline">Your Resume.<br>Your Skills.<br><span>Your Next Opportunity.</span></h1>
+                <p class="brand-description">Let AI find the right career path for you.</p>
+            </div>
+
+            <div class="signal-art" aria-hidden="true">
+                <div class="signal-grid"></div>
+                <div class="signal-ring ring-outer"></div>
+                <div class="signal-ring ring-middle"></div>
+                <div class="signal-ring ring-inner"></div>
+                <div class="signal-axis axis-horizontal"></div>
+                <div class="signal-axis axis-vertical"></div>
+                <span class="signal-core"></span>
+                <span class="signal-point point-one"></span>
+                <span class="signal-point point-two"></span>
+                <span class="signal-point point-three"></span>
+                <span class="signal-label label-top">PROFILE <b>01</b></span>
+                <span class="signal-label label-right">OPPORTUNITY <b>02</b></span>
+                <span class="signal-label label-bottom">MOMENTUM <b>03</b></span>
+            </div>
+
+            <div class="brand-footer"><span>YOUR AI COPILOT FOR SMARTER CAREERS</span><span>RPAI / 01</span></div>
+        </section>
+
+        <section class="form-panel" aria-labelledby="loginTitle">
+            <div class="form-topline"><span>WELCOME BACK</span><span class="secure-label"><i></i>GOOGLE SIGN-IN</span></div>
+            <div class="form-content">
+                <p class="form-index">YOUR CAREER WORKSPACE <span>·</span> 01</p>
+                <h2 id="loginTitle">Welcome to<br>Resume Pilot AI<span>.</span></h2>
+                <p class="form-intro">Your intelligent career copilot.</p>
+                <div class="google-button-wrap"><div id="googleSignInButton"></div></div>
+                <p class="google-status" id="googleStatus" role="status" aria-live="polite">Connecting to Google sign-in…</p>
+
+                <div class="form-divider"><span></span><b>OR</b><span></span></div>
+                <a class="workspace-link" href="index.html"><span>Explore the workspace demo</span><span aria-hidden="true">→</span></a>
+                <p class="auth-note">Google verifies your identity. Profile details are kept only for this browser session.</p>
+            </div>
+            <footer class="form-footer"><span>RESUME PILOT AI © 2026</span><span>MAKE THE NEXT MOVE COUNT.</span></footer>
+        </section>
+    </main>
+</body>
+</html>

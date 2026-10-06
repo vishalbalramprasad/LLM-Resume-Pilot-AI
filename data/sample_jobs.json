@@ -1,0 +1,69 @@
+{
+    "jobs": [
+        {
+            "id": "job_001",
+            "title": "Senior Backend Engineer",
+            "company": "TechCorp",
+            "location": "Remote",
+            "level": "senior",
+            "min_experience": 5,
+            "salary_range": [120000, 160000],
+            "required_skills": ["Python", "FastAPI", "AWS", "PostgreSQL", "Docker", "Kubernetes"],
+            "description": "Looking for experienced backend engineer to lead our payment systems team",
+            "url": "https://techcorp.example.com/job/001",
+            "posted_date": "2024-01-10"
+        },
+        {
+            "id": "job_002",
+            "title": "Full Stack Developer",
+            "company": "StartupXYZ",
+            "location": "San Francisco",
+            "level": "mid-level",
+            "min_experience": 3,
+            "salary_range": [100000, 140000],
+            "required_skills": ["Python", "React", "Node.js", "MongoDB", "AWS"],
+            "description": "Join our growing team building the next generation of web applications",
+            "url": "https://startupxyz.example.com/job/002",
+            "posted_date": "2024-01-08"
+        },
+        {
+            "id": "job_003",
+            "title": "Machine Learning Engineer",
+            "company": "AI Solutions Inc",
+            "location": "Remote",
+            "level": "senior",
+            "min_experience": 4,
+            "salary_range": [130000, 180000],
+            "required_skills": ["Python", "Machine Learning", "TensorFlow", "PyTorch", "AWS"],
+            "description": "Help us build cutting-edge ML models for enterprise clients",
+            "url": "https://aisolutions.example.com/job/003",
+            "posted_date": "2024-01-12"
+        },
+        {
+            "id": "job_004",
+            "title": "DevOps Engineer",
+            "company": "CloudTech",
+            "location": "New York",
+            "level": "mid-level",
+            "min_experience": 3,
+            "salary_range": [110000, 150000],
+            "required_skills": ["AWS", "Docker", "Kubernetes", "Terraform", "Python"],
+            "description": "Build and maintain our world-class cloud infrastructure",
+            "url": "https://cloudtech.example.com/job/004",
+            "posted_date": "2024-01-09"
+        },
+        {
+            "id": "job_005",
+            "title": "Frontend Engineer - React",
+            "company": "WebStudio",
+            "location": "Remote",
+            "level": "mid-level",
+            "min_experience": 2,
+            "salary_range": [90000, 130000],
+            "required_skills": ["React", "JavaScript", "CSS", "REST APIs", "Git"],
+            "description": "Create beautiful and performant user interfaces",
+            "url": "https://webstudio.example.com/job/005",
+            "posted_date": "2024-01-11"
+        }
+    ]
+}
